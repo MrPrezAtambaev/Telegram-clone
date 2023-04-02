@@ -4,10 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectUser, login, logout } from "./features/userSlice";
 import Login from "./pages/Login/Login";
 import Main from "./pages/Main/Main";
+import { useTheme } from "@mui/material";
 
 function App() {
 	const user = useSelector(selectUser);
 	const dispatch = useDispatch();
+	const theme = useTheme();
 
 	useEffect(() => {
 		auth.onAuthStateChanged((authUser) => {

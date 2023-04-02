@@ -5,6 +5,7 @@ import { IconButton } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import prof from "./prof.module.scss";
+import FriendsList from "../../components/FriendList/FriendList";
 
 interface UserProfile {
 	photo: string;
@@ -28,6 +29,7 @@ const Profile = () => {
 						<LogoutOutlinedIcon />
 					</IconButton>
 				</div>
+				<FriendsList />
 			</div>
 		</div>
 	);

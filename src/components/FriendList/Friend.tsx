@@ -5,7 +5,7 @@ const Friend = ({ img, name }: FriendProps) => {
 	return (
 		<div>
 			<Avatar src={img} />
-			<div style={{ color: "black" }}>{name}</div>
+			<div>{name}</div>
 		</div>
 	);
 };

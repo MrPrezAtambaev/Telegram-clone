@@ -9,7 +9,7 @@ import { setThread } from "../features/threadSlice";
 
 interface SidebarThreadProps {
 	id: string;
-	threadName?: string;
+	threadName?: string | null | undefined;
 	img?: string;
 }
 

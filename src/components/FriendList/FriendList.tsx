@@ -18,7 +18,7 @@ const FriendsList = () => {
 	const [searchFriends, setSearchFriends] = useState<Array<FrListServer>>([]);
 
 	useEffect(() => {
-		onSnapshot(doc(db, "users", user.uid), (snapshot) => {
+		onSnapshot(doc(db, "users", user?.uid), (snapshot) => {
 			const snap = snapshot.data();
 			if (snap) {
 				setFriends(snap.userFriends.map((fr: any) => fr));
@@ -51,7 +51,7 @@ const FriendsList = () => {
 			</div>
 			<div className={friend.fried}>
 				{friends.map((fr) => (
-					<Friend img={fr.img} name={fr.name} />
+					<Friend key={fr.uid} img={fr.img} name={fr.name} />
 				))}
 			</div>
 		</div>

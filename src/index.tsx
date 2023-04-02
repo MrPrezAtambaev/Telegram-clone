@@ -21,7 +21,17 @@ declare module "@mui/material/styles" {
 	}
 }
 
-export const theme = createTheme({});
+export const theme = createTheme({
+	palette: {
+		mode: "light",
+		primary: {
+			main: "#1976d2",
+		},
+		secondary: {
+			main: "#0a1236",
+		},
+	},
+});
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
