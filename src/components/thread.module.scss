@@ -1,0 +1,88 @@
+.wrapper {
+    display: flex;
+	flex: 0.75;
+	flex-direction: column;
+	height: 92vh;
+	border-top: 1px solid rgba(190, 190, 190, 0.1);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.head {
+    display: flex;
+	border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+    height: 60px;
+
+	& > button > svg {
+		color: black;
+
+		&:hover {
+			color: rgba(2, 150, 199, 1);
+		}
+	}
+}
+
+.cont {
+    display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	color: black;
+	padding: 10px;
+	height: 30px;
+    margin: 0;
+    & > h5 {
+		font-weight: 500;
+		color: gray;
+	}
+}
+
+.message {
+    overflow: scroll;
+	flex: 1;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+
+.inp {
+    display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: transparent;
+	border-top: 1px solid rgba(190, 190, 190, 0.1);
+
+	& > form {
+		display: flex;
+		flex: 1;
+		flex-direction: row;
+	}
+
+	& > form > button {
+		& > svg {
+			color: black;
+		}
+
+		&:hover svg {
+			color: rgb(2, 150, 199);
+		}
+	}
+}
+
+.input {
+    width: 98%;
+	outline-width: 0 !important;
+	outline: none;
+	border: none;
+	border-radius: 0 !important;
+	background-color: transparent;
+	padding: 5px;
+	color: black;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import friend from "./friend.module.scss";
-// import Search from "./../Search/Search";
+import Search from "./../Search/Search";
 import { Button } from "@mui/material";
 import Friend from "./Friend";
 import { FrList, FrListServer } from "./interfaces";
@@ -41,7 +41,7 @@ const FriendsList = () => {
 		<div className={friend.wrap}>
 			<h4>Friends</h4>
 			<div className={friend.head}>
-				{/* <Search value={search} setValue={setSearch} /> */}
+				<Search value={search} setValue={setSearch} />
 				<Button onClick={() => test(search)}>Search</Button>
 			</div>
 			<div className={friend.found}>

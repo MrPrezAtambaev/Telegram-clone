@@ -7,7 +7,7 @@ import { MessageProps, StyledProps } from "./interfaces";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content space-between;
+  justify-content: space-between;
   position: relative;
   width: fit-content;StyledProps
   margin: 15px;

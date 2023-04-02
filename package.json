@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
     "@reduxjs/toolkit": "^1.9.3",
     "@tanstack/react-query": "^4.28.0",
@@ -22,6 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "sass": "^1.60.0",
@@ -53,5 +56,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "gh-pages": "^4.0.0",
+    "stylelint": "^15.4.0",
+    "stylelint-prettier": "^3.0.0"
   }
 }

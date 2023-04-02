@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { TextField, Button, FormGroup } from "@mui/material";
-// import { FormWrapper } from './SignInAndUpStyles';
+import sign from "./sign.module.scss";
 
 const SignUpSchema = Yup.object().shape({
 	email: Yup.string()
@@ -30,7 +30,7 @@ const SignSignInWithEmail = ({ SignSignInWithEmail }: any) => {
 		>
 			{({ values, errors, touched, handleChange }) => (
 				<Form>
-					<FormGroup>
+					<FormGroup className={sign.wrapper}>
 						<h2>Sign In With Email</h2>
 						<TextField
 							id="email"

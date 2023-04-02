@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styled from "@emotion/styled";
 import { Avatar, IconButton } from "@mui/material";
 import {
 	MicNoneOutlined,
@@ -24,94 +23,7 @@ import {
 } from "firebase/firestore";
 import db from "../firebase-config";
 import Message from "./Message/Message";
-
-const Wrapper = styled.div`
-	display: flex;
-	flex: 0.75;
-	flex-direction: column;
-	height: 92vh;
-	border-top: 1px solid rgba(190, 190, 190, 0.1);
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-`;
-
-const Header = styled.div`
-	display: flex;
-	border-bottom: 1px solid rgba(190, 190, 190, 0.1);
-	align-items: center;
-	align-content: center;
-	justify-content: space-between;
-
-	& > button > svg {
-		color: white;
-
-		&:hover {
-			color: rgba(2, 150, 199, 1);
-		}
-	}
-`;
-
-const Content = styled.div`
-	display: flex;
-	flex-direction: row;
-	align-content: center;
-	justify-content: center;
-	color: white;
-	padding: 10px;
-`;
-
-const Info = styled.div`
-	& > h5 {
-		fotn-weight: 500;
-		color: gray;
-	}
-`;
-
-const Messages = styled.div`
-	overflow: scroll;
-	flex: 1;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-`;
-
-const ThreadInput = styled.div`
-	display: flex;
-	align-items: center;
-	padding: 10px 20px;
-	background-color: transparent;
-	border-top: 1px solid rgba(190, 190, 190, 0.1);
-
-	& > form {
-		display: flex;
-		flex: 1;
-		flex-direction: row;
-	}
-
-	& > form > button {
-		& > svg {
-			color: white;
-		}
-
-		&:hover svg {
-			color: rgb(2, 150, 199);
-		}
-	}
-`;
-
-const InputMessage = styled.input`
-	width: 98%;
-	outline-width: 0 !important;
-	outline: none;
-	border: none;
-	border-radius: 0 !important;
-	background-color: transparent;
-	padding: 5px;
-	color: white;
-`;
+import thread from "./thread.module.scss";
 
 const Thread = () => {
 	const [input, setInput] = useState("");
@@ -156,30 +68,31 @@ const Thread = () => {
 	};
 
 	return (
-		<Wrapper>
-			<Header>
-				<Content>
+		<div className={thread.wrapper}>
+			<div className={thread.head}>
+				<div className={thread.cont}>
 					<Avatar src={threadImg} />
-					<Info>
-						<h4>{threadName}</h4>
-						<h5>Last Seen</h5>
-					</Info>
-				</Content>
+					<div className={thread.info}>
+						<h4 style={{ margin: 0 }}>{threadName}</h4>
+						<h5 style={{ margin: 0, marginTop: "8px" }}>Last Seen</h5>
+					</div>
+				</div>
 				<IconButton>
 					<MoreHoriz />
 				</IconButton>
-			</Header>
-			<Messages>
+			</div>
+			<div className={thread.message}>
 				{messages.map(({ id, data }) => (
 					<Message key={id} data={data} />
 				))}
-			</Messages>
-			<ThreadInput>
+			</div>
+			<div className={thread.inp}>
 				<form>
-					<InputMessage
+					<input
 						placeholder="Write a message..."
 						type="text"
 						value={input}
+						className={thread.input}
 						onChange={(e) => setInput(e.target.value)}
 					/>
 					<IconButton>
@@ -192,8 +105,8 @@ const Thread = () => {
 						<MicNoneOutlined />
 					</IconButton>
 				</form>
-			</ThreadInput>
-		</Wrapper>
+			</div>
+		</div>
 	);
 };
 

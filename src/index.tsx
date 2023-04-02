@@ -1,18 +1,35 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { orange } from "@mui/material/colors";
 
-const root = ReactDOM.createRoot(
-	document.getElementById("root") as HTMLElement,
-);
+declare module "@mui/material/styles" {
+	interface Theme {
+		status: {
+			danger: string;
+		};
+	}
+	// allow configuration using `createTheme`
+	interface ThemeOptions {
+		status?: {
+			danger?: string;
+		};
+	}
+}
+
+export const theme = createTheme({});
+
+const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
 	<BrowserRouter>
 		<Provider store={store}>
-			<App />
+			<ThemeProvider theme={theme}>
+				<App />
+			</ThemeProvider>
 		</Provider>
 	</BrowserRouter>,
 );

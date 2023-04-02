@@ -1,10 +1,4 @@
-import {
-	Routes,
-	Route,
-	NavLink,
-	HashRouter as Router,
-	BrowserRouter,
-} from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import { AppBar, IconButton } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -15,7 +9,7 @@ import main from "./main.module.scss";
 const Main = () => {
 	return (
 		<div className={main.cont}>
-			<AppBar>
+			<AppBar className={main.nav}>
 				<NavLink to="/">
 					<IconButton>
 						<AccountCircleOutlinedIcon />

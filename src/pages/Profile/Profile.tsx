@@ -4,6 +4,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { IconButton } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
+import prof from "./prof.module.scss";
 
 interface UserProfile {
 	photo: string;
@@ -15,10 +16,10 @@ const Profile = () => {
 	const user = useSelector(selectUser) as UserProfile | null;
 
 	return (
-		<div className="wrap">
-			<div className="cont">
-				<div className="head">
-					<img src={user?.photo ?? img} alt="user" className="photo" />
+		<div className={prof.wrap}>
+			<div className={prof.cont}>
+				<div className={prof.head}>
+					<img src={user?.photo ?? img} alt="user" className={prof.photo} />
 					<div>
 						<h2>{user?.displayName ?? "Unknown User"}</h2>
 						<h3>E-mail: {user?.email ?? "Unknown Email"}</h3>
